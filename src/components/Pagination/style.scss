@@ -1,0 +1,56 @@
+.pagination {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  &__selected {
+    font-size: 24px;
+    color: #11a9ed;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+
+    &__todayButton {
+      color: #11a9ed;
+      font-size: 1rem;
+      background-color: #fff;
+      user-select: none;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      margin-left: 0.25rem;
+    }
+
+    &__nextButton {
+      color: #999;
+      font-size: 1rem;
+      padding: 0;
+      width: 20px;
+      background-color: #fff;
+      user-select: none;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      margin-left: 0.25rem;
+    }
+
+    &__previousButton {
+      color: #999;
+      font-size: 1rem;
+      padding: 0;
+      width: 20px;
+      background-color: #fff;
+      user-select: none;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      margin-left: 0.25rem;
+    }
+  }
+
+  &__buttons > * {
+    cursor: pointer;
+    user-select: none;
+  }
+}

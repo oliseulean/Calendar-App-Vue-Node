@@ -1,4 +1,13 @@
-# calendar-app-vue-node
+# Calendar-App-Vue
+
+## Short Description
+
+A Calendar App in VueJS with Vuex.
+
+Future implementation: NodeJS || LocalStorage
+
+<img src="/src/assets/Calendar1.jpg" width="500px"/>
+<img src="/src/assets/Calendar2.jpg" width="500px"/>
 
 ## Project setup
 ```
@@ -20,5 +29,6 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+

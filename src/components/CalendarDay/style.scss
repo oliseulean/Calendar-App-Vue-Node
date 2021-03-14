@@ -1,0 +1,15 @@
+.calendar__day {
+  &__list {
+    list-style-type: none;
+    font-size: 0.8rem;
+    color: #30a9ed;
+    font-weight: 700;
+    padding: 0;
+    margin: 0.5rem 0;
+    text-align: left;
+  }
+}
+
+.today {
+  background: rgba(188, 143, 143, 0.4);
+}

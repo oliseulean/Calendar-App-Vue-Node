@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Pagination />
+    <DaysOfTheWeek />
+    <GridCalendar />
+    <EventModal/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import GridCalendar from "././components/GridCalendar/index.vue";
+import DaysOfTheWeek from "./components/DaysOfTheWeek/index.vue";
+import Pagination from "././components/Pagination/index.vue";
+import EventModal from "././components/EventModal/index.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld,
-  },
+    DaysOfTheWeek,
+    GridCalendar,
+    Pagination,
+    EventModal
+  }
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

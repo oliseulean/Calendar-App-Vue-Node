@@ -1,0 +1,21 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+body {
+  display: flex;
+}
+@media only screen and (max-width: 600px) {
+  #app {
+    width: 500px;
+  }
+}
