@@ -2,9 +2,7 @@
 
 ## Short Description
 
-A Calendar App in VueJS with Vuex.
-
-Future implementation: NodeJS || LocalStorage
+A Calendar App in VueJS with Vuex & NodeJS
 
 <img src="/src/assets/Calendar1.jpg" width="500px"/>
 <img src="/src/assets/Calendar2.jpg" width="500px"/>
