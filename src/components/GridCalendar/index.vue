@@ -1,5 +1,5 @@
 <template>
-  <CalendarWeek :class="contentClass" :weeks="weeks"/>
+  <CalendarWeek :class="contentClass" :weeks="weeks" />
 </template>
 
 <script src="./index.js"/>

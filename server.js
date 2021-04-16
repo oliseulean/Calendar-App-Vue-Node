@@ -1,10 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuid4 } = require('uuid');
 const dayjs = require('dayjs');
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
 const app = express();
 
 app.use(bodyParser.json());
@@ -12,31 +11,32 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors());
 const port = 3000;
 
-app.listen(port, () => {
-    console.log("Server started on port 3000");
+app.listen(port, (err) => {
+    if(err) console.log(err);
+    console.log(`Server started on port ${port}`);
 });
-
-const events = JSON.parse(fs.readFileSync(path.join(__dirname, './db/events.json')))
+const events = JSON.parse(fs.readFileSync('./db/events.json').toString());
 
 app.post('/add_event', (req, res) => {
     events.push({
-        id: uuidv4(),
+        id: uuid4(),
         ...req.body
     });
-    fs.writeFileSync(path.join(__dirname, './db/events.json'), JSON.stringify(events))
+  /* eslint-disable no-debugger */
+  debugger;
+    const stringifyEventsJSONFile = JSON.stringify(events, null, '\t');
+    fs.writeFileSync('./db/events.json', stringifyEventsJSONFile);
     res.sendStatus(200);
 });
 
 app.get('/get_event/:month', (req, res) => {
-    if (!req.params.month) return res.status(400).send('Date is not found')
-    const formatedData = events.map(e => ({
+    const formattedData = events.map(e => ({
         ...e,
-        date: dayjs(e.date).unix() * 1000
-    }))
-    const startMonth = dayjs(req.params.month * 1000).startOf('month').unix() * 1000
-    const endMonth = dayjs(req.params.month * 1000).endOf('month').unix() * 1000
-    const filterdEvents = formatedData.filter(e => e.date >= startMonth && e.date <= endMonth)
-
-    return res.status(200).json(filterdEvents)
+        date: dayjs(e.date).unix() * 1000,
+    }));
+    const startMonth = dayjs(req.params.month * 1000).startOf('month').unix() * 1000;
+    const endMonth = dayjs(req.params.month * 1000).endOf('month').unix() * 1000;
+    const filteredEvents = formattedData.filter(e => e.date >= startMonth && e.date <= endMonth);
+    return res.status(200).json(filteredEvents);
 })
 
